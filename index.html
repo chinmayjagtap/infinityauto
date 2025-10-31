@@ -20,14 +20,27 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link cta">Contact</a>
       </nav>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <div id="hamburger" class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
+
+    <nav id="mobileNav" class="mobile-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero fade-up">
       <div class="container hero-grid">
-        <div class="hero-text">
+        <div class="hero-text fade-up">
           <h1>Precision-engineered auto spare parts<br/><span>BUILT FOR INFINITY, CRAFTED WITH QUALITY</span></h1>
           <p>OEM-grade components for passenger vehicles, commercial fleets and industrial applications. Minimal tolerances. Maximum reliability.</p>
           <div class="hero-ctas">
@@ -35,13 +48,13 @@
             <a href="contact.html" class="btn ghost">Get in touch</a>
           </div>
         </div>
-        <div class="hero-art">
+        <div class="hero-art fade-up">
           <img src="img/hero-illustration.svg" alt="Auto parts illustration" />
         </div>
       </div>
     </section>
 
-    <section class="features container">
+    <section class="features container fade-up">
       <div class="feature">
         <img src="img/quality.svg" alt="" />
         <h3>Quality Assured</h3>
@@ -59,20 +72,18 @@
       </div>
     </section>
 
-    <section class="preview-products container">
+    <section class="preview-products container fade-up">
       <div class="section-header">
         <h2>Featured Products</h2>
         <p>A quick look at a few of our core offerings.</p>
       </div>
-      <div class="product-grid" id="featured-grid">
-        <!-- Product cards inserted by JS for smoother demo animations -->
-      </div>
+      <div class="product-grid" id="featured-grid"></div>
       <div class="more-link">
         <a href="products.html" class="btn ghost">See all products</a>
       </div>
     </section>
 
-    <section class="testimonials container">
+    <section class="testimonials container fade-up">
       <blockquote>
         <p>"Consistent quality and on-time delivery — a partner we can rely on."</p>
         <cite>— Fleet Manager, Orion Logistics</cite>
@@ -80,7 +91,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer fade-up">
     <div class="container footer-grid">
       <div>
         <h4>Infinity Auto Comp</h4>
@@ -88,8 +99,8 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p>Email: infinityautocomp1@gmailcom</p>
-        <p>Phone: +91 80440 12533</p>
+        <p>Email: <a href="mailto:infinityautocomp1@gmail.com">infinityautocomp1@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918044012533">+91 80440 12533</a></p>
       </div>
       <div>
         <h4>Quick Links</h4>
@@ -100,7 +111,7 @@
     </div>
     <div class="footer-bottom">
       <small>
-        © <strong>Infinity Auto Comp</strong> — All rights reserved. 
+        © <strong>Infinity Auto Comp</strong> — All rights reserved.
         <span class="developer-credit">
           | Developed by <strong>Sameep Rajput</strong> & <strong>Chinmay Jagtap</strong>
         </span>

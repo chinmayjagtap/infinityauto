@@ -1,4 +1,3 @@
-
 const products = [
   {id:1, title:'Front Brake Disc', category:'brake', img:'img/product-disc.svg', desc:'High-carbon alloy brake disc, balanced and pre-scored for consistent bedding.'},
   {id:2, title:'Suspension Arm', category:'suspension', img:'img/product-arm.svg', desc:'Forged suspension arm with reinforced mounting points.'},
@@ -8,14 +7,17 @@ const products = [
   {id:6, title:'Connecting Rod', category:'engine', img:'img/product-rod.svg', desc:'Lightweight alloy connecting rod machined for balance.'}
 ];
 
+// Helper for selecting single element
 function el(q){return document.querySelector(q)}
+
+// Render grid for product listings
 function renderGrid(targetId, items){
   const grid = el('#'+targetId);
   if(!grid) return;
   grid.innerHTML = '';
   items.forEach(p=>{
     const card = document.createElement('article');
-    card.className = 'card';
+    card.className = 'card fade-up';
     card.innerHTML = `
       <img loading="lazy" src="${p.img}" alt="${p.title}" />
       <h4>${p.title}</h4>
@@ -25,49 +27,69 @@ function renderGrid(targetId, items){
       </div>
     `;
     grid.appendChild(card);
-    // subtle animation
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(18px)';
-    setTimeout(()=>{ card.style.transition='all .6s cubic-bezier(.2,.9,.3,1)'; card.style.opacity=1; card.style.transform='translateY(0)'; }, 70 * p.id);
   });
 }
 
-document.addEventListener('DOMContentLoaded',()=>{
-  // featured grid on home page
+document.addEventListener('DOMContentLoaded', ()=>{
+  // Render featured + all products if container present
   renderGrid('featured-grid', products.slice(0,4));
-  // products page
   renderGrid('product-grid', products);
 
-  // filtering
+  // Product filter & search
   const filter = el('#category-filter');
   if(filter){
     filter.addEventListener('change', (e)=>{
       const val = e.target.value;
       const search = el('#search').value.toLowerCase();
-      const filtered = products.filter(p=> (val==='all' || p.category===val) && p.title.toLowerCase().includes(search));
+      const filtered = products.filter(p=>(val==='all' || p.category===val) && p.title.toLowerCase().includes(search));
       renderGrid('product-grid', filtered);
     });
     el('#search').addEventListener('input', (e)=>{
       const val = filter.value;
       const q = e.target.value.toLowerCase();
-      const filtered = products.filter(p=> (val==='all' || p.category===val) && p.title.toLowerCase().includes(q));
+      const filtered = products.filter(p=>(val==='all' || p.category===val) && p.title.toLowerCase().includes(q));
       renderGrid('product-grid', filtered);
     });
   }
 
-  // menu toggle for small screens
-  const mt = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.nav');
-  mt && mt.addEventListener('click', ()=>{ if(nav.style.display==='flex'){nav.style.display='none'}else{nav.style.display='flex'; nav.style.flexDirection='column'; nav.style.gap='8px'} });
+  // Hamburger + overlay logic for mobile nav
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const overlay = document.getElementById('overlay');
+  if(hamburger){
+    hamburger.addEventListener('click', ()=>{
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      overlay.classList.toggle('active');
+    });
+    overlay.addEventListener('click', ()=>{
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      overlay.classList.remove('active');
+    });
+  }
 
+  // Fade-up animation on scroll for all sections/cards
+  const fadeElements = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.2});
+  fadeElements.forEach(el=>observer.observe(el));
+
+  // Mobile-specific slide-in animation for hero sections
+  const heroSection = document.querySelector('.hero, .about-hero');
+  if(heroSection && window.innerWidth <= 768){
+    heroSection.style.opacity = 0;
+    heroSection.style.transform = 'translateX(100%)';
+    setTimeout(()=>{
+      heroSection.style.transition = 'all 1s ease';
+      heroSection.style.opacity = 1;
+      heroSection.style.transform = 'translateX(0)';
+    }, 300);
+  }
 });
-
-// contact demo submit
-function submitContact(e){
-  e.preventDefault();
-  const f = e.target;
-  const data = new FormData(f);
-  const name = data.get('name');
-  alert('Thanks, '+name+'. This is a demo contact form. Integrate an email/CRM to receive messages.');
-  f.reset();
-}

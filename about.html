@@ -20,17 +20,30 @@
         <a href="about.html" class="nav-link">About</a>
         <a href="contact.html" class="nav-link cta">Contact</a>
       </nav>
-      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+
+      <div id="hamburger" class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
+
+    <nav id="mobileNav" class="mobile-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div id="overlay" class="overlay"></div>
   </header>
 
   <main class="container about-page">
-    <section class="about-hero">
+    <section class="about-hero fade-up">
       <h1>We craft components that keep vehicles moving</h1>
       <p>Founded with a focus on engineering excellence, Infinity Auto Comp blends traditional manufacturing with modern QA and materials science to deliver parts that perform under stress.</p>
     </section>
 
-    <section class="timeline">
+    <section class="timeline fade-up">
       <div class="timeline-item">
         <h3>Our Mission</h3>
         <p>To provide reliable, high-performance spare parts that add real value across the supply chain.</p>
@@ -49,20 +62,20 @@
       </div>
     </section>
 
-    <section class="team">
+    <section class="team fade-up">
       <h2>Leadership</h2>
       <div class="team-grid">
-        <div class="card">
+        <div class="card fade-up">
           <img src="img/person-1.svg" alt="Founder" />
           <h4>Rohit Sharma</h4>
           <p>Founder & CEO — 15+ years in automotive supply chain and manufacturing.</p>
         </div>
-        <div class="card">
+        <div class="card fade-up">
           <img src="img/person-2.svg" alt="Head of Engineering" />
           <h4>Anjali Mehta</h4>
           <p>Head of Engineering — Expert in materials & precision machining.</p>
         </div>
-        <div class="card">
+        <div class="card fade-up">
           <img src="img/person-3.svg" alt="Head of Ops" />
           <h4>Vikram Rao</h4>
           <p>Operations Lead — Specialises in scale manufacturing & QC.</p>
@@ -71,7 +84,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer fade-up">
     <div class="container footer-grid">
       <div>
         <h4>Infinity Auto Comp</h4>
@@ -79,8 +92,8 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p>Email: infinityautocomp1@gmailcom</p>
-        <p>Phone: +91 80440 12533</p>
+        <p>Email: <a href="mailto:infinityautocomp1@gmail.com">infinityautocomp1@gmail.com</a></p>
+        <p>Phone: <a href="tel:+918044012533">+91 80440 12533</a></p>
       </div>
       <div>
         <h4>Quick Links</h4>
@@ -91,7 +104,7 @@
     </div>
     <div class="footer-bottom">
       <small>
-        © <strong>Infinity Auto Comp</strong> — All rights reserved. 
+        © <strong>Infinity Auto Comp</strong> — All rights reserved.
         <span class="developer-credit">
           | Developed by <strong>Sameep Rajput</strong> & <strong>Chinmay Jagtap</strong>
         </span>
