@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Infinity Auto Comp</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="img/logo.svg" alt="Infinity Auto Comp logo" />
+        <span>Infinity Auto Comp</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link cta">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container contact-page">
+    <section class="section-header">
+      <h1>Contact Us</h1>
+      <p>Send us a message and our sales team will get back to you.</p>
+    </section>
+
+    <div class="contact-grid">
+      <form id="contact-form" class="contact-form" onsubmit="submitContact(event)">
+        <label>
+          Name
+          <input required name="name" />
+        </label>
+        <label>
+          Company
+          <input name="company" />
+        </label>
+        <label>
+          Email
+          <input required type="email" name="email" />
+        </label>
+        <label>
+          Message
+          <textarea required name="message" rows="6"></textarea>
+        </label>
+        <div class="form-actions">
+          <button class="btn" type="submit">Send Message</button>
+        </div>
+        <p class="form-note">This form is a demo; integrate a backend or email provider for production.</p>
+      </form>
+
+      <div class="contact-info">
+        <h3>Office</h3>
+        <p>Infinity Auto Comp<br/>Industrial Area, Pune, India</p>
+        <p>Email: info@infinityautocomp.com<br/>Phone: +91 98765 43210</p>
+        <div class="map-placeholder">
+          <img src="img/map.svg" alt="Map placeholder" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Infinity Auto Comp</h4>
+        <p>Precision auto spare parts manufacturer.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: info@infinityautocomp.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="products.html">Products</a><br/>
+        <a href="about.html">About</a><br/>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© Infinity Auto Comp — All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>

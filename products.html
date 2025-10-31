@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Products — Infinity Auto Comp</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html">
+        <img src="img/logo.svg" alt="Infinity Auto Comp logo" />
+        <span>Infinity Auto Comp</span>
+      </a>
+      <nav class="nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="products.html" class="nav-link">Products</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link cta">Contact</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
+
+  <main class="container products-page">
+    <section class="section-header">
+      <h1>Our Products</h1>
+      <p>Browse categories and detailed product descriptions.</p>
+    </section>
+
+    <div class="filters">
+      <label>Filter:
+        <select id="category-filter">
+          <option value="all">All</option>
+          <option value="engine">Engine</option>
+          <option value="suspension">Suspension</option>
+          <option value="brake">Brake</option>
+          <option value="electrical">Electrical</option>
+        </select>
+      </label>
+      <input id="search" placeholder="Search products..." />
+    </div>
+
+    <div class="product-grid" id="product-grid">
+      <!-- JS will render product cards -->
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Infinity Auto Comp</h4>
+        <p>Precision auto spare parts manufacturer.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>Email: info@infinityautocomp.com</p>
+        <p>Phone: +91 98765 43210</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <a href="products.html">Products</a><br/>
+        <a href="about.html">About</a><br/>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <small>© Infinity Auto Comp — All rights reserved.</small>
+    </div>
+  </footer>
+</body>
+</html>
